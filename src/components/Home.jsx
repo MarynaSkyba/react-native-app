@@ -3,8 +3,10 @@ import {
   StyleSheet,
   Text,
   Image,
+  TouchableOpacity,
   useWindowDimensions,
 } from "react-native";
+import * as Animatable from "react-native-animatable";
 import React from "react";
 import StyledButton from "./StyledButton";
 import StyledText from "./StyledText";
@@ -15,29 +17,42 @@ import Google from "../../assets/google.png";
 import Person from "../../assets/user.png";
 import Heart from "../../assets/heart-b.png";
 import { Button } from "react-native-paper";
-import AnimatedHome from "./AnimatedHome";
+
+// import AnimatedHome from "./Amination/AnimatedHome";
 
 const Home = () => {
-  // const { width } = useWindowDimensions();
   return (
     <View style={styles.container}>
-      {/* <AnimatedHome style={{ flex: 0.5 }} /> */}
+      {/* <Animatable.Text
+        animation="zoomIn"
+        // duration="3000"
+        // iterationCount={5}
+        // direction="alternate"
+      > */}
       <View style={styles.container}>
-        <StyledText fontSize="subheading" style={styles.heading}>
-          Bienvenido a Senniors familias,
-        </StyledText>
-        <StyledText
-          fontSize="subheading"
-          fontWeight="bold"
-          style={styles.heading}
+        <Animatable.Text
+          animation="zoomIn"
+          // duration="3000"
+          // iterationCount={5}
+          // direction="alternate"
         >
-          el complemento perfecto del Homecare
-        </StyledText>
-        <StyledText style={styles.textGrey}>
-          Nuestra aplicacion te ayudara a saber como estan tus seres queridos en
-          tiempo real.
-        </StyledText>
+          <StyledText fontSize="subheading" style={styles.heading}>
+            Bienvenido a Senniors familias,
+          </StyledText>
+          <StyledText
+            fontSize="subheading"
+            fontWeight="bold"
+            style={styles.heading}
+          >
+            el complemento perfecto del Homecare
+          </StyledText>
+          <StyledText style={styles.textGrey}>
+            Nuestra aplicacion te ayudara a saber como estan tus seres queridos
+            en tiempo real.
+          </StyledText>
+        </Animatable.Text>
       </View>
+
       <View>
         <View style={styles.button}>
           <Image source={Heart} style={styles.img} />
@@ -64,29 +79,6 @@ const Home = () => {
           <StyledText style={styles.text}>Continuar con Google</StyledText>
         </View>
 
-        {/* <Button
-          icon="google"
-          mode="contained"
-          color="white"
-          style={styles.button}
-          uppercase="false"
-          onPress={() => console.log("Pressed")}
-        >
-          Continuar con Google
-        </Button> */}
-        {/* <Link to="/signin"> */}
-        {/* <Button
-            icon="account-circle-outline"
-            mode="contained"
-            color="white"
-            style={styles.button}
-            uppercase="false"
-            onPress={() => console.log("Pressed")}
-          >
-            <StyledText style={{}}>Crear una cuenta</StyledText>
-          </Button>
-        </Link> */}
-
         <Link to="/signin">
           <View style={styles.button}>
             <Image source={Person} style={styles.img} />
@@ -94,6 +86,7 @@ const Home = () => {
           </View>
         </Link>
       </View>
+      {/* </Animatable.Text> */}
     </View>
   );
 };
@@ -102,7 +95,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginVertical: 40,
-    // paddingRight: 40,
   },
   heading: {
     fontSize: 30,

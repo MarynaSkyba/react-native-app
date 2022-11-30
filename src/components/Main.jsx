@@ -5,6 +5,7 @@ import AppBar from "./AppBar";
 import SignIn from "../pages/SignIn";
 import Home from "./Home";
 import Welcome from "../pages/Welcome";
+import Animation from "../screen/AnimationScreen";
 
 const Main = () => {
   // const [inputName, setInputName] = useState([]);

@@ -4,6 +4,7 @@ import Main from "./src/components/Main";
 import NavigationBar from "./src/components/NavigationBar";
 import theme from "./src/theme";
 import { useFonts } from "expo-font";
+import AnimationScreen from "./src/screen/AnimationScreen";
 // import AppLoading from "expo-app-loading";
 
 import { Epilogue_900Black } from "@expo-google-fonts/epilogue";
@@ -18,6 +19,7 @@ export default function App() {
       <NativeRouter>
         <View style={styles.container}>
           <Main />
+          {/* <AnimationScreen /> */}
         </View>
       </NativeRouter>
     </>
