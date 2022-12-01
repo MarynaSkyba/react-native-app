@@ -1,9 +1,4 @@
 const theme = {
-  appBar: {
-    primary: "lightblue",
-    textPrimary: "#000030",
-    textSecondary: "#000014",
-  },
   colors: {
     primary: "#2B334D",
     white: "#fff",
@@ -18,7 +13,7 @@ const theme = {
     small: 12,
   },
   fonts: {
-    main: "Epilogue",
+    main: "Roboto",
   },
   fontWeight: {
     normal: "400",

@@ -10,7 +10,7 @@ const WelcomeDataItem = (props) => {
         style={{ flexDirection: "row", paddingBottom: 2, alignItems: "center" }}
       >
         <View>
-          <Image style={styles.image} source={{ uri: props.img }} />
+          <Image style={styles.image} source={props.img} />
         </View>
         <View style={{ paddingLeft: 20 }}>
           <StyledText color="white" fontWeight="bold">
@@ -31,8 +31,6 @@ const styles = StyleSheet.create({
     height: 20,
   },
   container: {
-    // flexDirection: "column",
-    // flexWrap: "wrap",
     paddingHorizontal: 20,
     paddingVertical: 5,
     borderRadius: 8,

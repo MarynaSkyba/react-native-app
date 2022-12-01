@@ -1,12 +1,11 @@
 import {
   View,
-  FlatList,
   StyleSheet,
   ImageBackground,
   Text,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import { NavigationContainer } from "@react-navigation/native";
 
 import StyledText from "../components/StyledText";
@@ -14,6 +13,7 @@ import WelcomeMain from "../components/WelcomeMain.jsx";
 import WelcomeInfo from "../components/WelcomeInfo";
 import WelcomeOffers from "../components/WelcomeOffers";
 import NavigationBar from "../components/NavigationBar";
+import theme from "../theme";
 
 const Welcome = () => {
   const [repositories, setRepositories] = useState([]);
@@ -30,31 +30,32 @@ const Welcome = () => {
 
   return (
     <NavigationContainer>
-      <View>
-        <View style={{ flexDirection: "row" }}>
-          <StyledText fontWeight="bold" style={{ fontSize: 14 }}>
+      <View style={styles.container}>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <StyledText fontWeight="bold" style={{ fontSize: 20 }}>
             Buenos dias,
           </StyledText>
-          <StyledText>{repositories.name}</StyledText>
-          {/* <LinearGradient
-          colors={["#4c669f", "#3b5998", "#192f6a"]}
-          style={styles.background}
-        >
-          <Text style={styles.text}>Claudia</Text>
-        </LinearGradient> */}
+          <StyledText style={styles.name}>{repositories.name} !</StyledText>
         </View>
         <WelcomeMain data={repositories} />
         <WelcomeInfo />
         <WelcomeOffers />
       </View>
-      <NavigationBar />
+      <View>
+        <NavigationBar />
+      </View>
     </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
+  },
+  name: {
+    color: theme.colors.textWarn,
+    fontSize: 20,
+    marginLeft: 10,
   },
 });
 

@@ -15,10 +15,10 @@ function NavigationBar() {
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
-          position: "fixed",
-          left: 0,
-          right: 0,
-          bottom: -10,
+          position: "absolute",
+          left: -20,
+          right: -20,
+          bottom: -20,
           backgroundColor: "#fff",
           borderRadius: 20,
           height: 90,

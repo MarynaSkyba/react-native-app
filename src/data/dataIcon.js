@@ -10,7 +10,7 @@ export default [
   },
   {
     id: "2",
-    description: "Wheelchair",
+    description: "Help",
     img: Wheelchair,
   },
   {
@@ -26,7 +26,7 @@ export default [
   },
   {
     id: "5",
-    description: "Wheelchair",
+    description: "Help",
     img: Wheelchair,
   },
   {

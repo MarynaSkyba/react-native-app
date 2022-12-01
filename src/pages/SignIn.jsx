@@ -44,25 +44,6 @@ const initialValues = {
 // }
 
 export default function SignIn() {
-  const [name, setName] = useState();
-
-  // const onSubmit = (values) => {
-  //   console.log("name inside on submit", values.name);
-
-  //   setName(values.name);
-  // };
-
-  // const [name, setName] = useState([]);
-
-  // useEffect(
-  //   (values) => {
-  //     setName(values);
-  //   },
-  //   [name]
-  // );
-
-  // console.log("SignIn - name", name);
-
   return (
     <Formik
       initialValues={initialValues}
@@ -71,7 +52,6 @@ export default function SignIn() {
       }}
     >
       {({ handleSubmit, handleChange, setFieldValue, values }) => {
-        console.log(values);
         {
           /* const { values, handleChange } = formikProps; */
         }
@@ -86,7 +66,6 @@ export default function SignIn() {
                 value={values.name}
                 onChange={handleChange("name")}
                 // onChangeText={handleChange("name")}
-                // placeholderTextColor="#fff"
               />
               <StyledTextInput
                 placeholder="Appellidos"

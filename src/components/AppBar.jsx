@@ -20,7 +20,7 @@ const AppBar = ({ signin }) => {
         </View>
 
         <View>
-          <StyledText style={{ textAlign: "center" }}>
+          <StyledText style={{ textAlign: "center", fontSize: 14 }}>
             Crear una cuenta
           </StyledText>
         </View>

@@ -4,10 +4,10 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  useWindowDimensions,
+  Animated,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import StyledButton from "./StyledButton";
 import StyledText from "./StyledText";
 import { Link } from "react-router-native";
@@ -16,33 +16,35 @@ import theme from "../theme";
 import Google from "../../assets/google.png";
 import Person from "../../assets/user.png";
 import Heart from "../../assets/heart-b.png";
-import { Button } from "react-native-paper";
-
-// import AnimatedHome from "./Amination/AnimatedHome";
 
 const Home = () => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 2000,
+    }).start();
+  }, [fadeAnim]);
+
   return (
     <View style={styles.container}>
-      {/* <Animatable.Text
-        animation="zoomIn"
-        // duration="3000"
-        // iterationCount={5}
-        // direction="alternate"
-      > */}
-      <View style={styles.container}>
-        <Animatable.Text
-          animation="zoomIn"
-          // duration="3000"
-          // iterationCount={5}
-          // direction="alternate"
-        >
+      {/* <Animatable.Text animation="fadeIn"> */}
+      <Animated.View // Special animatable View
+        style={{
+          useNativeDriver: true,
+          opacity: fadeAnim, // Bind opacity to animated value
+        }}
+      >
+        <View style={styles.textBox}>
           <StyledText fontSize="subheading" style={styles.heading}>
             Bienvenido a Senniors familias,
           </StyledText>
+
           <StyledText
             fontSize="subheading"
             fontWeight="bold"
-            style={styles.heading}
+            style={styles.gradient}
           >
             el complemento perfecto del Homecare
           </StyledText>
@@ -50,8 +52,9 @@ const Home = () => {
             Nuestra aplicacion te ayudara a saber como estan tus seres queridos
             en tiempo real.
           </StyledText>
-        </Animatable.Text>
-      </View>
+        </View>
+      </Animated.View>
+      {/* </Animatable.Text> */}
 
       <View>
         <View style={styles.button}>
@@ -79,27 +82,32 @@ const Home = () => {
           <StyledText style={styles.text}>Continuar con Google</StyledText>
         </View>
 
-        <Link to="/signin">
+        <Link to="/signin" component={TouchableOpacity}>
           <View style={styles.button}>
             <Image source={Person} style={styles.img} />
             <StyledText style={styles.text}>Crear una cuenta</StyledText>
           </View>
         </Link>
       </View>
-      {/* </Animatable.Text> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginVertical: 40,
+    marginHorizontal: 10,
   },
+  textBox: { marginVertical: 80 },
   heading: {
     fontSize: 30,
     letterSpacing: 2,
     lineHeight: 40,
+  },
+  gradient: {
+    fontSize: 30,
+    letterSpacing: 2,
+    lineHeight: 40,
+    color: theme.colors.textWarn,
   },
   textGrey: {
     color: theme.colors.borderColor,
