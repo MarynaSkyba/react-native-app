@@ -6,12 +6,9 @@ import {
   TouchableOpacity,
   Animated,
 } from "react-native";
-import * as Animatable from "react-native-animatable";
 import React, { useRef, useEffect } from "react";
-import StyledButton from "./StyledButton";
 import StyledText from "./StyledText";
 import { Link } from "react-router-native";
-import AppBar from "./AppBar";
 import theme from "../theme";
 import Google from "../../assets/google.png";
 import Person from "../../assets/user.png";
@@ -29,11 +26,10 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      {/* <Animatable.Text animation="fadeIn"> */}
-      <Animated.View // Special animatable View
+      <Animated.View
         style={{
           useNativeDriver: true,
-          opacity: fadeAnim, // Bind opacity to animated value
+          opacity: fadeAnim,
         }}
       >
         <View style={styles.textBox}>
@@ -54,7 +50,6 @@ const Home = () => {
           </StyledText>
         </View>
       </Animated.View>
-      {/* </Animatable.Text> */}
 
       <View>
         <View style={styles.button}>

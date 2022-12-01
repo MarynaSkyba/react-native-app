@@ -17,32 +17,6 @@ const initialValues = {
   toggle: false,
 };
 
-// const FormikInputValue = ({ name, ...props }) => {
-//   const [field, meta, helpers] = useField(name);
-
-//   return (
-//     <>
-//       <StyledTextInput
-//         value={field.value}
-//         onChangeText={(value) => helpers.setValue(value)}
-//         {...props}
-//       />
-//       {meta.error && <StyledText style={styles.error}>{meta.error}</StyledText>}
-//     </>
-//   );
-// };
-
-// const validate = values => {
-//     const errors = {}
-// if(!values.email) {
-//     errors.email = 'Email is required'
-// }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,4}$/i.
-// test(values.email)) {
-//     errors.email = 'Invalid email address'
-// }
-// return errors
-// }
-
 export default function SignIn() {
   return (
     <Formik
