@@ -17,7 +17,7 @@ const WelcomeMain = ({ data }) => {
     <View>
       <View style={{ borderRadius: 8 }}>
         <ImageBackground
-          source={require("../image/granny.jpg")}
+          source={{ uri: "../image/granny.jpg" }}
           resizeMode="cover"
           style={styles.image}
         >

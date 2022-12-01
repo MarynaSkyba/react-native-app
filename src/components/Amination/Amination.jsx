@@ -10,6 +10,7 @@ import { useState, useRef } from "react";
 import React from "react";
 import data from "../../data/dataAnimation";
 import AnimationItem from "./AnimationItem";
+import Paginator from "./Paginator";
 
 const Animation = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,9 +29,8 @@ const Animation = () => {
         <FlatList
           data={data}
           horizontal
-          showHorizontalScrollIndicator
-          pagingEnabled
-          bounces={false}
+          // showHorizontalScrollIndicator
+          pagingEnabled={true} // bounces={false}
           // keyExtractor={(item) => item.id}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -45,6 +45,7 @@ const Animation = () => {
           renderItem={({ item }) => <AnimationItem item={item} />}
         />
       </View>
+      <Paginator data={data} scrollX={scrollX} />
     </View>
   );
 };

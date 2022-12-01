@@ -18,8 +18,8 @@ export default function App() {
     <>
       <NativeRouter>
         <View style={styles.container}>
-          <Main />
-          {/* <AnimationScreen /> */}
+          {/* <Main /> */}
+          <AnimationScreen />
         </View>
       </NativeRouter>
     </>
